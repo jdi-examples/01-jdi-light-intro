@@ -10,6 +10,10 @@ import static org.hamcrest.Matchers.is;
 
 public class JDILightExample {
     @Test
+    public void openBaeldung() {
+        openUrl("http://www.baeldung.com/");
+    }
+    @Test
     public void openAboutPage() {
         openUrl("http://www.baeldung.com/");
         $(".menu-about a").click();
