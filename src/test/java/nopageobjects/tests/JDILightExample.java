@@ -19,6 +19,7 @@ public class JDILightExample {
         $(".menu-about a").click();
         $("//h3[contains(.,'About Baeldung')]").click();
         assertThat(getUrl(), is("https://www.baeldung.com/about/"));
+        assertThat(getTitle(), is("About Baeldung | Baeldung"));
     }
 
     @Test
