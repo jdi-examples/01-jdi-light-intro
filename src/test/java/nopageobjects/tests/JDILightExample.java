@@ -10,26 +10,29 @@ import static org.hamcrest.Matchers.is;
 
 public class JDILightExample {
     @Test
-    public void openBaeldung() {
-        openUrl("http://www.baeldung.com/");
+    public void openJDITestSite() {
+        openUrl("https://epam.github.io/JDI/index.html");
     }
     @Test
-    public void openAboutPage() {
-        openUrl("http://www.baeldung.com/");
-        $(".menu-about a").click();
-        $("//h3[contains(.,'About Baeldung')]").click();
-        assertThat(getUrl(), is("https://www.baeldung.com/about/"));
-        assertThat(getTitle(), is("About Baeldung | Baeldung"));
+    public void loginAndOpenContactPage() {
+        openUrl("https://epam.github.io/JDI/index.html");
+        $("img#user-icon").click();
+        $("#name").sendKeys("epam");
+        $("#password").sendKeys("1234");
+        $("#login-button").click();
+        $("//*[@class='sidebar-menu']//*[text()='Contact form']").click();
+        assertThat(getUrl(), is("https://epam.github.io/JDI/contacts.html"));
+        assertThat(getTitle(), is("Contact Form"));
     }
 
     @Test
     public void actionsWithPage() {
-        openUrl("http://www.baeldung.com/");
-        getUrl();
-        getTitle();
-        back();
-        forward();
-        getHtml();
-        refresh();
+        WebPage.openUrl("https://epam.github.io/JDI/index.html");
+        WebPage.getUrl();
+        WebPage.getTitle();
+        WebPage.back();
+        WebPage.forward();
+        WebPage.getHtml();
+        WebPage.refresh();
     }
 }

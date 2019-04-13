@@ -3,12 +3,12 @@ package pageobject.uiobjects.example.site;
 import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
 import com.epam.jdi.light.elements.pageobjects.annotations.Title;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
-import pageobject.uiobjects.example.site.pages.AboutPage;
+import pageobject.uiobjects.example.site.pages.ContactPage;
 import pageobject.uiobjects.example.site.pages.HomePage;
 
-@JSite("https://www.baeldung.com/")
+@JSite("https://epam.github.io/JDI/")
 public class SiteJdi {
     @Url("/") public static HomePage homePage;
-    @Url("/about/") @Title("About Baeldung | Baeldung")
-    public static AboutPage aboutPage;
+    @Url("/contacts.html") @Title("Contact Form")
+    public static ContactPage contactPage;
 }
