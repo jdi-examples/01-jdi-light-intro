@@ -3,8 +3,10 @@ package nopageobjects.tests;
 import com.epam.jdi.light.elements.composite.WebPage;
 import org.testng.annotations.Test;
 
-import static com.epam.jdi.light.elements.composite.WebPage.*;
-import static com.epam.jdi.light.ui.html.HtmlFactory.$;
+import static com.epam.jdi.light.elements.composite.WebPage.getTitle;
+import static com.epam.jdi.light.elements.composite.WebPage.getUrl;
+import static com.epam.jdi.light.elements.composite.WebPage.openUrl;
+import static com.epam.jdi.light.elements.init.UIFactory.$;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -13,6 +15,7 @@ public class JDILightExample {
     public void openJDITestSite() {
         openUrl("https://epam.github.io/JDI/index.html");
     }
+
     @Test
     public void loginAndOpenContactPage() {
         openUrl("https://epam.github.io/JDI/index.html");
