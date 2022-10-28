@@ -11,12 +11,14 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <aspectj.version>1.9.1</aspectj.version>
+        <aspectj.version>1.9.6</aspectj.version>
         <driver>chrome</driver>
         <domain>https://epam.github.io/JDI/</domain>
-        <allure.testng>2.7.0</allure.testng>
-        <allure.maven>2.9</allure.maven>
+        <allure.testng>2.13.8</allure.testng>
+        <allure.maven>2.10.0</allure.maven>
+        <allure.version>2.13.8</allure.version>
         <jetty.version>9.4.12.RC2</jetty.version>
+        <log4j.version>2.19.0</log4j.version>
     </properties>
 
     <dependencies>
@@ -26,18 +28,46 @@
             <artifactId>jdi-light-html</artifactId>
             <version>RELEASE</version>
         </dependency>
-		
         <!--Allure-->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
             <version>${allure.testng}</version>
         </dependency>
-
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-model</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.14.3</version>
+            <version>7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-1.2-api</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
     </dependencies>
 

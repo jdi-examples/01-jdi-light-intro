@@ -6,7 +6,7 @@ import com.epam.jdi.light.elements.pageobjects.annotations.Url;
 
 import static com.epam.jdi.light.common.CheckTypes.CONTAINS;
 
-@Url("/") @Title(value = "Baeldung | Java", validate = CONTAINS)
+@Url("/") @Title(value = "Baeldung", validate = CONTAINS)
 public class HomePage extends WebPage {
 
 }

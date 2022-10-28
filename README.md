@@ -34,7 +34,7 @@ Simple test to open http://www.baeldung.com/ site will look like this:
 ```java
 public class JDILightExample { 
     public openPage() {
-        WebPage.openUrl("http://www.baeldung.com/")
+        WebPage.openUrl("http://www.baeldung.com/");
     }
 }
 ```
@@ -46,7 +46,7 @@ But if you would like to operate with pages we recommend to create PageObject fo
 ```java
 @JSite("http://www.baeldung.com/")
 public class SiteJdi {
-    @Url("/") @Title("Baeldung | Java, Spring and Web Development tutorials")
+    @Url("/") @Title("Baeldung")
     public static HomePage homePage;
 }
 ```
@@ -87,15 +87,15 @@ _* Thanks to captcha we will not sent the form in this case but in your test app
 First we need to create 2 Page Objects: HomePage – from previous example and ContactPage with fields and button on it
 
 ```java
-@Url("/") @Title(value = "Baeldung | Java", validate = CONTAINS)
+@Url("/") @Title(value = "Baeldung", validate = CONTAINS)
 public class HomePage extends WebPage { }
 
-@Url("/contact") @Title("Contact Me | Baeldung")
+@Url("/contact") @Title("Contact Us | Baeldung")
 public class ContactPage extends WebPage {
     @FindBy(css = "[name=first_name]") TextField firstName;
     @FindBy(css = "[name=email]") TextField email;
     @FindBy(css = "[name=message]") TextArea message;
-    @FindBy(xpath = "//*[text()='Send Your Message']") Button send;
+    @FindBy(xpath = "//*[@value='Send your message']") Button send;
 }
 ```
 But standard @Findby can be simplified in JDI annotations @Css and @XPath or even with universal @UI:
@@ -105,13 +105,13 @@ public class ContactPage extends WebPage {
     @Css("[name=first_name]") TextField firstName;
     @Css("[name=email]") TextField email;
     @Css("[name=message]") TextArea message;
-    @XPath("//*[text()='Send Your Message']") Button send;
+    @XPath("//*[@value='Send your message']") Button send;
 }
 public class ContactPage extends WebPage {
-    @UI("[name=first_name]") TextField firstName;
-    @UI("[name=email]") TextField email;
-    @UI("[name=message]") TextArea message;
-    @ByText("Send Your Message") Button send;
+    @UI("[name=your-name]") TextField firstName;
+    @UI("[name=your-email]") TextField email;
+    @UI("[name=your-message]") TextArea message;
+    @UI("//*[@value='Send your message']") Button send;
 }
 ```
 In this case our Site entity will look like this:
@@ -147,7 +147,7 @@ public interface TestsInit {
     static void setUp() {
         logger.setLogLevel(STEP);
         initElements(BaeldungSite.class);
-        homepage.open()
+        homepage.open();
     }
 }
 ```
