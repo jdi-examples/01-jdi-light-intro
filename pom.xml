@@ -19,6 +19,7 @@
         <allure.version>2.13.8</allure.version>
         <jetty.version>9.4.12.RC2</jetty.version>
         <log4j.version>2.19.0</log4j.version>
+        <jdi.light.html.version>1.4.6</jdi.light.html.version>
     </properties>
 
     <dependencies>
@@ -26,7 +27,7 @@
         <dependency>
             <groupId>com.epam.jdi</groupId>
             <artifactId>jdi-light-html</artifactId>
-            <version>RELEASE</version>
+            <version>${jdi.light.html.version}</version>
         </dependency>
         <!--Allure-->
         <dependency>
@@ -91,12 +92,12 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>io.qameta.allure.testng.AllureTestNg</value>
-                        </property>
-                    </properties>
+<!--                    <properties>-->
+<!--                        <property>-->
+<!--                            <name>listener</name>-->
+<!--                            <value>io.qameta.allure.testng.AllureTestNg</value>-->
+<!--                        </property>-->
+<!--                    </properties>-->
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
