@@ -59,8 +59,8 @@ jobs:
         uses: Xotabu4/selenoid-github-action@v2
         id: start-selenoid
         with:
-        selenoid-start-arguments: |
-          --args "-timeout 60s -limit 5"
+          selenoid-start-arguments: |
+            --args "-timeout 60s -limit 5"
 
       - name: Check Selenoid has been started
         run: curl http://localhost:4444/status
