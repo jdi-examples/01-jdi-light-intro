@@ -11,8 +11,9 @@ import com.epam.jdi.light.ui.html.elements.common.TextField;
 @Url("/contact")
 @Title("Contact Us | Baeldung")
 public class ContactPage extends WebPage {
-    @UI("[name=your-name]") TextField firstName;
-    @UI("[name=your-email]") TextField email;
-    @UI("[name=your-message]") TextArea message;
-    @UI("//*[@value='Send your message']") Button send;
+    @UI("[name=your-name]") public TextField firstName;
+    @UI("[name=your-email]") public TextField email;
+    @UI("[name=your-message]") public TextArea message;
+    @UI("//*[@value='Send your message']") public Button send;
+    @UI("button.css-47sehv") public Button applyCookies;
 }
