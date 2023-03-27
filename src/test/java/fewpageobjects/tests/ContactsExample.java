@@ -168,7 +168,6 @@ public class ContactsExample implements TestsInit {
         contactPage.asForm().check(MY_CONTACT);
         Thread.sleep(2000);
     }
-/*
 
     @Test
     public void fillContactTest20() throws InterruptedException {
@@ -257,5 +256,4 @@ public class ContactsExample implements TestsInit {
         contactPage.asForm().check(MY_CONTACT);
         Thread.sleep(2000);
     }
-*/
 }
