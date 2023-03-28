@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.epam.jdi</groupId>
             <artifactId>jdi-light-material-ui</artifactId>
-            <version>RELEASE</version>
+            <version>1.4.10</version>
         </dependency>
         <!--Allure-->
         <dependency>
