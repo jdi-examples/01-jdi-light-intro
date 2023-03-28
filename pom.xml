@@ -40,7 +40,7 @@
         <!--JDI-->
         <dependency>
             <groupId>com.epam.jdi</groupId>
-            <artifactId>jdi-light-html</artifactId>
+            <artifactId>jdi-light-material-ui</artifactId>
             <version>RELEASE</version>
         </dependency>
         <!--Allure-->

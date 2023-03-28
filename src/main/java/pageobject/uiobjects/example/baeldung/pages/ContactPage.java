@@ -15,4 +15,5 @@ public class ContactPage extends WebPage {
     @UI("[name=your-email]") TextField email;
     @UI("[name=your-message]") TextArea message;
     @UI("//*[@value='Send your message']") Button send;
+    @UI("button.css-47sehv") public Button applyCookies;
 }

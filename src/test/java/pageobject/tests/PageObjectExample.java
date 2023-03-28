@@ -1,5 +1,6 @@
 package pageobject.tests;
 
+import org.testng.annotations.BeforeMethod;
 import pageobject.TestsInit;
 import org.testng.annotations.Test;
 
@@ -16,5 +17,7 @@ public class PageObjectExample implements TestsInit {
         loginButton.click();
         menuContactForm.click();
         contactPage.checkOpened();
+        //fake call. We do not run this test.
+        contactPage.select.list();
     }
 }
