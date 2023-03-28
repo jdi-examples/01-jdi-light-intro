@@ -1,6 +1,8 @@
 package fewpageobjects;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import pageobject.uiobjects.example.baeldung.BaeldungSite;
 
@@ -11,8 +13,8 @@ import static com.epam.jdi.light.settings.WebSettings.logger;
 import static pageobject.uiobjects.example.baeldung.BaeldungSite.homePage;
 
 public interface TestsInit {
-    @BeforeSuite(alwaysRun = true)
-    static void setUp() {
+    @BeforeMethod(alwaysRun = true)
+    default void setUp() {
         //logger.setLogLevel(STEP);
         logger.info("setUp exec");
         initElements(BaeldungSite.class);
@@ -20,8 +22,8 @@ public interface TestsInit {
         logger.info("setUp exec finish");
     }
 
-    @AfterSuite(alwaysRun = true)
-    static void teardown() {
+    @AfterMethod(alwaysRun = true)
+    default void teardown() {
         close();
     }
 }
