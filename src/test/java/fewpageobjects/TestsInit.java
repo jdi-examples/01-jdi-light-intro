@@ -13,9 +13,11 @@ import static pageobject.uiobjects.example.baeldung.BaeldungSite.homePage;
 public interface TestsInit {
     @BeforeSuite(alwaysRun = true)
     static void setUp() {
-        logger.setLogLevel(STEP);
+        //logger.setLogLevel(STEP);
+        logger.info("setUp exec");
         initElements(BaeldungSite.class);
         homePage.open();
+        logger.info("setUp exec finish");
     }
 
     @AfterSuite(alwaysRun = true)
